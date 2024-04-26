@@ -36,6 +36,48 @@ ul {
 
 }
 
+/* Start Components */
+.main-title{
+    margin: 100px auto;
+    border: 2px solid black;
+    width: fit-content;
+    padding: 10px 20px;
+    font-size: 30px;
+    position: relative;
+    z-index: 1;
+    transition: var(--main-transition-duration);
+}
+.main-title::before, .main-title::after{
+    content: "";
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    top: 50%;
+    z-index: -1;
+    transform: translateY(-50%);
+}
+.main-title::before{
+    z-index: -1;
+    left: -30px;
+}
+.main-title::after{
+    z-index: -1;
+    right: -30px;
+}
+.main-title:hover::before{
+    animation: left-move 0.5s linear forwards;
+}
+.main-title:hover::after{
+    animation: right-move 0.5s linear forwards;
+    }
+.main-title:hover{
+    color: white;
+    border: 2px solid white;
+    transition-delay: 0.5s;
+}
+/* End Components */
 /* Small Screen */
 @media (min-width:768px) {
     .container {
@@ -164,9 +206,7 @@ ul {
 /* Start Landing Section  */
 .landing {
     position: relative;
-
 }
-
 .landing::before {
     content: "";
     position: absolute;
@@ -260,7 +300,7 @@ ul {
     color: var(--main-color-alt);
     bottom: 30px;
 }
-
+/* ================================================= */
 /* Start Animation */
 @keyframes up-and-down  {
     0%, 100%{
@@ -278,8 +318,34 @@ ul {
         transform: translateY(-15px);
     }
 }
+@keyframes left-move {
+    50%{
+        left: 0;
+        width: 12px;
+        height: 12px;
+    }
+    100%{
+        left: 0;
+        border-radius: 0;
+        width: 50%;
+        height: 100%;
+    }
+}
+@keyframes right-move {
+    50%{
+        right: 0;
+        width: 12px;
+        height: 12px;
+    }
+    100%{
+        right: 0;
+        border-radius: 0;
+        width: 50%;
+        height: 100%;
+    }
+}
 /* End Animation */
-
+/* ================================================= */
 /* End Landing Section  */
 /* ================================================= */
 /* Start Mega Menu */
