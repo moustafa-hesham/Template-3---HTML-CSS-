@@ -30,6 +30,8 @@ body {
 
 ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
@@ -118,7 +120,6 @@ ul {
     position: relative;
     left: 0;
     width: 100%;
-    z-index: 2;
     background-color: white;
     box-shadow: 0 0 10px #ddd;
 }
@@ -165,7 +166,7 @@ ul {
     }
 }
 
-.header .main-nav>li:last-child:hover .mega-menu {
+.header .main-nav > li:hover .mega-menu {
     opacity: 1;
     z-index: 100;
     top: calc(100% + 1px);
@@ -219,7 +220,7 @@ ul {
 /* ================================================= */
 /* Start Landing Section  */
 .landing {
-    position: relative;
+    position: relative; 
 }
 
 .landing::before {
